@@ -1,0 +1,63 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+
+    <Button name="GrindPlusToggleButtonTemplate" virtual="true">
+	    <Size x="16" y="16"/>
+		<NormalTexture file="Interface\Buttons\UI-PlusButton-Up"/>
+		<PushedTexture file="Interface\Buttons\UI-PlusButton-Down"/>
+		<DisabledTexture file="Interface\Buttons\UI-PlusButton-Disabled"/>
+		<HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
+    </Button>
+
+	<Button name="GrindPlusResetButtonTemplate" virtual="true">
+	    <Size x="20" y="20"/>
+        <Layers>
+					<Layer level="ARTWORK" textureSubLevel="5">
+						<Texture parentKey="Icon" file="Interface\Buttons\UI-RefreshButton" >
+							<Size x="12" y="12"/>
+							<Anchors>
+								<Anchor point="CENTER" x="-1" y="0"/>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+
+		<HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/> 
+        <Scripts>
+			<OnMouseDown>
+				self.Icon:SetPoint("CENTER", self, "CENTER", -2, -1);
+			</OnMouseDown>
+			<OnMouseUp>
+				self.Icon:SetPoint("CENTER", self, "CENTER", -1, 0);
+			</OnMouseUp>
+			<OnClick>
+				PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+			</OnClick>
+            <OnEnter>
+                GameTooltip:SetOwner(self, "ANCHOR_TOP");
+                GameTooltip:SetText("Reset the session.");
+                GameTooltip:Show();
+            </OnEnter>
+            <OnLeave>
+                GameTooltip:Hide();
+            </OnLeave>
+		</Scripts>
+    </Button>
+
+	<Button name="GrindPlusNodeBodyTemplate" virtual="true">
+		<Size x="250" y="16"/> 
+		<Anchors>
+    		<Anchor point="CENTER"/>
+  		</Anchors>
+		<Layers>
+  			<Layer level="BACKGROUND">
+
+				<FontString ParentKey="bodyText" inherits="SystemFont_Shadow_Small2" justifyH="LEFT">	 
+
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+</Ui>
+
