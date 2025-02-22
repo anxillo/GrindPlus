@@ -1,6 +1,6 @@
 ## Interface: 11506 
 ## Title: GrindPlus
-## Notes: Tracks money, loot, and mob kills of grind session.
+## Notes: Tracks money, loot, and mob kills of a grind session.
 ## Author: Ciondar
 ## Version: 1.0
 ## SavedVariablesPerCharacter: GrindPlusDB
@@ -14,3 +14,4 @@ nodes/xp.lua
 nodes/kills.lua
 nodes/loot.lua
 nodes/goods.lua
+nodes/reputation.lua
